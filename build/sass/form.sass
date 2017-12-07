@@ -1,0 +1,60 @@
+.registration
+  padding-top: $spacer
+  padding-bottom: $spacer
+
+  &__header
+    display: flex
+    align-items: flex-end
+    margin-bottom: $spacer
+
+  &__logo
+    display: none
+
+    @media (min-width: 430px)
+      display: block
+
+  &__logo-sm
+    display: block
+
+    @media (min-width: 430px)
+      display: none
+
+  &__title
+    font-size: 20px
+    font-weight: bold
+    margin-bottom: 14px
+    margin-left: $spacerSm
+
+
+  &__form
+    background-color: $white
+    padding: $spacer $spacerSm
+
+    &-inner
+      max-width: 400px
+
+    &-butn
+      margin-top: $spacer
+
+
+  &__input
+    flex-grow: 1
+    flex-basis: 0
+    max-width: 230px
+    margin-left: auto
+
+    &-wrap
+      margin-bottom: $spacerSm
+
+      @media (min-width: 430px)
+        display: flex
+        align-items: center
+        margin-bottom: $spacerXs
+
+    &-label
+      display: block
+      margin-right: $spacerXs
+      margin-bottom: $spacerXs
+
+      @media (min-width: 430px)
+        margin-bottom: 0
