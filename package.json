@@ -1,0 +1,28 @@
+{
+  "name": "default",
+  "version": "30.11.17",
+  "description": "default packages",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "html",
+    "js",
+    "php"
+  ],
+  "author": "Andrew",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-svgo": "^1.2.5",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
