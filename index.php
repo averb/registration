@@ -1,29 +1,4 @@
-<?php
-$_SESSION['message'] = '';
-
-if (isset($_POST['register_butn'])) {
-  session_start();
-  $email = $_POST['email'];
-  $pass1 = $_POST['pass1'];
-  $pass2 = $_POST['pass2'];
-  $birthday = $_POST['birthday'];
-  $today = date("d/m/Y");
-
-  if ($pass1 === $pass2) {
-    $pass1 = md5($pass1);
-
-    if (strtotime($birthday) < strtotime($today)) {
-      header("location: welcome.php");
-    } else {
-      $_SESSION['message'] = "Birth date in the future.";
-    }
-
-  } else {
-    $_SESSION['message'] = "Passwords did not match! Try again.";
-  }
-}
-
-?>
+<?php include 'form_handler.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
