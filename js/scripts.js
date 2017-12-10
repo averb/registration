@@ -31,7 +31,8 @@ function submitForm(){
         return id('js-errorMessage').innerHTML = 'Birth date in the future.';
       }
 
-       alert(`Welcome ${this.responseText}`);
+      id('js-errorMessage').innerHTML = '';
+      alert(`Welcome ${this.responseText}`);
 
     }
   }
