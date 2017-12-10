@@ -17,10 +17,17 @@
   padding: 6px 24px
   cursor: pointer
 
+  &:disabled
+    opacity: .8
+    cursor: progress
+
+  & svg
+    display: block
+
   &.butn--green
     background-color: $main
 
-    &:hover, &:focus
+    &:hover, &:focus, &:disabled
       color: $main
       background-color: transparent
       box-shadow: inset 0 0 0 1px currentColor

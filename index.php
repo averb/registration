@@ -25,7 +25,7 @@
 
       <div class="registration__form">
         <div class="registration__form-inner">
-          <form action="index.php" method="post">
+          <form action="index.php" method="post" onsubmit="submitForm(); return false;">
             <div class="registration__input-wrap">
               <label class="registration__input-label" for="email">Email</label>
               <input
@@ -73,8 +73,16 @@
                 required
               >
             </div>
-            <div class="error-message"><?= $_SESSION['message'] ?></div>
-            <button class="butn butn--green registration__form-butn" type="submit" name="register_butn">Register</button>
+
+            <div class="error-message" id="js-errorMessage"><?= $_SESSION['message'] ?></div>
+
+            <button
+              class="butn butn--green registration__form-butn"
+              type="submit"
+              id="js-submitButn"
+            >
+              Register
+            </button>
           </form>
         </div>
       </div>

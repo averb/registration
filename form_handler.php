@@ -6,10 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $birthday = $_POST['birthday'];
   $pass1 = $_POST['pass1'];
   $pass2 = $_POST['pass2'];
+  $isAjax = $_POST['isAjax'];
   $today = date("d/m/Y");
 
   $_SESSION['message'] = '';
   $_SESSION['email'] = $email;
+
+  if ($isAjax) {
+    echo json_encode($email);
+    exit;
+  }
 
   if (!empty($email) || !empty($birthday) || !empty($pass1) || !empty($pass2)) {
 
