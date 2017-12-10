@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
   <section class="registration wrapper">
-    <a href="index.php">← Register form</a>
+    <a href="index.php">← Registration form</a>
     <div class="registration__form">
       <div class="registration__form-inner">
         Welcome <strong><?= $_SESSION['email'] ?></strong>
