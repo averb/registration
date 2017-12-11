@@ -1,20 +1,21 @@
 <?php
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  session_start();
 
   $email = $_POST['email'];
   $birthday = $_POST['birthday'];
   $pass1 = $_POST['pass1'];
   $pass2 = $_POST['pass2'];
   $isAjax = $_POST['isAjax'];
-  $today = date("d/m/Y");
+  $birthDate = new DateTime($_POST['birthday']);
+  $today = new DateTime("now");
 
-  $_SESSION['message'] = '';
   $_SESSION['email'] = $email;
 
-  if ($isAjax) {
-    echo json_encode($email);
-    exit;
+  function validateDate($date, $format = 'd-m-Y') {
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
   }
 
   if (!empty($email) || !empty($birthday) || !empty($pass1) || !empty($pass2)) {
@@ -23,18 +24,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $pass1 = md5($pass1);
       $pass2 = md5($pass2);
 
-      if (strtotime($birthday) < strtotime($today)) {
-        header("location: welcome.php");
+      if (validateDate($birthday)) {
+
+        if ($birthDate <= $today) {
+
+          if ($isAjax) {
+            echo json_encode($email);
+          } else {
+            header("location: welcome.php");
+          }
+
+        } else {
+          echo "Birth date in the future.";
+        }
+
       } else {
-        $_SESSION['message'] = "Birth date in the future.";
+        echo "Date is not correct.";
       }
 
     } else {
-      $_SESSION['message'] = "Passwords did not match! Try again.";
+      echo "Passwords did not match! Try again.";
     }
 
   } else {
-    $_SESSION['message'] = "All fields are required";
+    echo "All fields are required.";
   }
 
 }

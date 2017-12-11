@@ -46,7 +46,7 @@
                 id="birthday"
                 name="birthday"
                 required
-                placeholder="dd/mm/yyyy"
+                placeholder="dd-mm-yyyy"
                 minlength="10"
                 maxlength="10"
               >
@@ -74,7 +74,7 @@
               >
             </div>
 
-            <div class="error-message" id="js-errorMessage"><?= $_SESSION['message'] ?></div>
+            <div class="error-message" id="js-errorMessage"></div>
 
             <button
               class="butn butn--green registration__form-butn"

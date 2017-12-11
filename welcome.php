@@ -14,7 +14,10 @@
     <a href="index.php">← Registration form</a>
     <div class="registration__form">
       <div class="registration__form-inner">
-        Welcome <strong><?= $_SESSION['email'] ?></strong>
+        Welcome
+        <strong>
+          <?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>
+        </strong>
       </div>
     </div>
   </section>
